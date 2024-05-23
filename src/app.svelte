@@ -3,6 +3,9 @@
 
   const now = new Date()
 
+  let settingsModal: any
+  let defaultTheme = 'retro'
+
   const leaders = [
     {
       name: 'Bilbo Baggins',
@@ -140,7 +143,7 @@
 
     <ul class="menu w-56 rounded-box bg-base-200">
       <li>
-        <button>Settings</button>
+        <button on:click={() => settingsModal.showModal()}>Settings</button>
         <button>Logout</button>
       </li>
     </ul>
@@ -260,3 +263,32 @@
     </footer>
   </div>
 </div>
+
+<dialog id="settingsModal" class="modal" bind:this={settingsModal}>
+  <div class="modal-box prose">
+    <h3 class="">Settings</h3>
+
+    <h4 class="">Theme</h4>
+
+    {#each ['cupcake', 'retro', 'dim', 'sunset'] as theme}
+      <div class="form-control">
+        <label class="label cursor-pointer gap-4">
+          <span class="label-text capitalize">
+            {theme}
+          </span>
+          <input
+            type="radio"
+            name="theme-radios"
+            class="theme-controller radio"
+            value={theme}
+            bind:group={defaultTheme}
+          />
+        </label>
+      </div>
+    {/each}
+  </div>
+
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>

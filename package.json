@@ -12,6 +12,7 @@
   "devDependencies": {
     "@sitek94/style-guide": "sitek94/style-guide",
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
+    "@tailwindcss/typography": "^0.5.13",
     "@tsconfig/svelte": "^5.0.2",
     "autoprefixer": "^10.4.19",
     "daisyui": "^4.11.1",

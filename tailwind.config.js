@@ -1,11 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{svelte,js,ts,jsx,tsx}"],
+  content: ['./index.html', './src/**/*.{svelte,js,ts,jsx,tsx}'],
   theme: {
     extend: {},
   },
   daisyui: {
-    themes: ["retro", "sunset"],
+    themes: ['cupcake', 'dim', 'retro', 'sunset'],
   },
-  plugins: [require("daisyui")],
-};
+  plugins: [require('@tailwindcss/typography'), require('daisyui')],
+}
